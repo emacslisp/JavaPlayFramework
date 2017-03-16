@@ -1,5 +1,8 @@
 package controllers;
 
+import java.util.List;
+
+import models.User;
 import play.mvc.*;
 
 import views.html.*;
@@ -17,7 +20,13 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+    	String result = "";
+		List<User> users = User.findAll();
+		
+		for(User u : users) {
+			result += u.name;
+		}
+        return ok(index.render(result));
     }
 
 }
