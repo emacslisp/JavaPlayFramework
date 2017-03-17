@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
@@ -14,10 +16,12 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
 import play.db.jpa.JPA;
+import play.db.jpa.JPAApi;
 
 public class JpaHelper<T, ID> {
 
     private final Class<T> entityClass;
+
     
     public JpaHelper (Class<T> entityClass) {
         this.entityClass = entityClass;
