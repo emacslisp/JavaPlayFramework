@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import models.User;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
@@ -14,6 +16,7 @@ import views.html.*;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -35,6 +38,16 @@ public class HomeController extends Controller {
         this.formFactory = formFactory;
         this.jpaApi = jpaApi;
     }
+    
+    @Transactional
+    public Result addPerson() {
+    	JsonNode request = request().body().asJson();
+    	User user = Json.fromJson(request.get("user"), User.class);
+        jpaApi.em().persist(user);
+        return ok("success");
+    }
+
+    
     /**
      * An action that renders an HTML page with a welcome message.
      * The configuration in the <code>routes</code> file means that
