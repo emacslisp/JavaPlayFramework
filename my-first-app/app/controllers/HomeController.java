@@ -56,8 +56,10 @@ public class HomeController extends Controller {
      */
     @Transactional
     public Result index() {
-    	 List<User> users = (List<User>) jpaApi.em().createQuery("select q from User q").getResultList();
-         return ok(toJson(users));
+    	 /*List<User> users = (List<User>) jpaApi.em().createQuery("select q from User q").getResultList();
+         return ok(toJson(users));*/
+    	
+    	return ok(index.render("Your new application is ready."));
     }
 
 }

@@ -11,15 +11,6 @@ import javax.persistence.Table;
 
 import play.db.jpa.Transactional;
 
-import play.data.FormFactory;
-import play.db.jpa.JPAApi;
-import play.db.jpa.Transactional;
-import play.mvc.Controller;
-import play.mvc.Result;
-
-import javax.inject.Inject;
-import java.util.List;
-
 @Entity
 @Table(name = "User")
 public class User implements Serializable {
