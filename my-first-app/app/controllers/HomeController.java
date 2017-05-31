@@ -19,6 +19,7 @@ import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.twirl.api.Html;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -60,6 +61,11 @@ public class HomeController extends Controller {
          return ok(toJson(users));*/
     	
     	return ok(index.render("Your new application is ready."));
+    }
+    
+    @Transactional
+    public Result main() {
+    	return ok(main.render("call main success fully", new Html("<b> Hello Angular</b>")));
     }
 
 }

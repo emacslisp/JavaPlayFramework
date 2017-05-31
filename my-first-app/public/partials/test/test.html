@@ -1,0 +1,21 @@
+<div id="TestController" ng-controller="TestController as ctrl">
+
+	<table>
+
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="e in ctrl.person">
+				<td>{{e.ID}}</td>
+				<td>{{e.Name}}</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+</div>
