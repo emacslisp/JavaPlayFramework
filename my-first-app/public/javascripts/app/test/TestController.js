@@ -6,7 +6,8 @@ app.controller('TestController', ['$scope', '$http', '$state', '$q', '$statePara
 	this.person = [
 		{ID:'23456',Name:"Monitor"},
 		{ID:'45677',Name:"Keyboard"},
-		{ID:'67895',Name:"MacBook"}
+		{ID:'67895',Name:"MacBook"},
+		{ID:'67895',Name:"iMac"}
 	];
 	
 }]);
