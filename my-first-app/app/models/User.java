@@ -1,6 +1,7 @@
 package models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,7 +13,6 @@ import javax.persistence.Table;
 import play.db.jpa.Transactional;
 
 @Entity
-@Table(name = "User")
 public class User implements Serializable {
 	
 
@@ -27,6 +27,9 @@ public class User implements Serializable {
 	
 	@Transactional
 	public static List<User> findAll() {
-		return helper.findAll();
+		List<User> result = new ArrayList<User>();
+		User u =  helper.findUniqueSql("select * from User where name = :p1","eddy");
+		result.add(u);
+		return result;
 	}
 }

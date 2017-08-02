@@ -8,6 +8,9 @@ scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   javaJdbc,
+  javaJpa,
   cache,
-  javaWs
+  javaWs,
+  "org.hibernate" % "hibernate-entitymanager" % "5.1.0.Final",
+  "mysql" % "mysql-connector-java" % "5.1.18"
 )
