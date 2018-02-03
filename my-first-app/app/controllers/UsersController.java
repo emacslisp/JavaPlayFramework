@@ -2,11 +2,14 @@ package controllers;
 
 import java.util.List;
 
-import models.User;
+import common.models.User;
+import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-public class UsersControlelr extends Controller{
+public class UsersController extends Controller{
+	
+	@Transactional
 	public Result index() {
 		
 		String result = "";
